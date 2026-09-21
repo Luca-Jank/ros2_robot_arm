@@ -1,0 +1,9 @@
+Problems:
+
+- I need to figure out how joints / links correlate 
+
+- How does the axis of the joint in my urdf affect the movement of the robot?
+
+- Look over the urdf file in general, what do "rpy" and such mean?
+
+- Go over the ros setup from the tutorial again and see if I understand what I did

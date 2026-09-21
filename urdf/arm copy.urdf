@@ -1,0 +1,10 @@
+<?xml version ="1.0"?>
+<robot name="my_arm">
+    <link name="base link">
+        <visual>
+            <geometry>
+                <box size="0.2 0.2 0.05"/>
+            </geometry>
+        </visual>
+    </link>
+</robot> 
