@@ -1,0 +1,4 @@
+ros2 launch urdf_tutorial display.launch.py model:=$HOME/ros2_ws/src/arm_bringup/urdf/arm.urdf
+=> Launch GUI
+source ~/ros2_ws/install/setup.bash
+
