@@ -1,9 +1,14 @@
 Problems:
 
 - I need to figure out how joints / links correlate 
+=> Joints are what moves (and exists). Links are more like visual parts of the robot (but they can acqurie collision via the ROS software)
+
+- What is RPY?
+=> RPY stands for Roll, Pitch, Yaw (measured in Radians: pi/2 = 90 Deg.)
+=> It controls the orientation of a base.
 
 - How does the axis of the joint in my urdf affect the movement of the robot?
-
-- Look over the urdf file in general, what do "rpy" and such mean?
+=> The axis I specify is the axis the joint rotates along. axis="1 0 0" means the arm can spin through the Y and Z Axis, but the X Values remain constant. 
+=> So it can for example assume the coordinates (0 5.3 3.4) whilst rotating around the X Axis.
 
 - Go over the ros setup from the tutorial again and see if I understand what I did
