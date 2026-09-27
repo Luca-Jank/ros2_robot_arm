@@ -12,3 +12,6 @@ Problems:
 => So it can for example assume the coordinates (0 5.3 3.4) whilst rotating around the X Axis.
 
 - Go over the ros setup from the tutorial again and see if I understand what I did
+
+- What is gazebo?
+=> Gazebo is the physics engine that ROS2 uses for stuff like collisions.
