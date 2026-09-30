@@ -10,4 +10,24 @@ Commands used:
 Explanation:
 Just a quick test to demonstrate ROS Concepts such as topics, nodes, and pipes (communcating betwee nodes)
 
+How to:
+In one terminal run
+    ros2 run turtlesim turtlesim_node
+In a new terminal (don't close the first one)
+    ros2 run turtlesim turtle_teleop_key
+
+in yet another terminal run
+        rqt
+
+You will see a turtle sim window open after the first one. 
+When you click on the second terminal and use the command on it, you will be able to control the turtle with the arrow keys.
+RQT is a tool that visualizes some aspects of ROS. In this case we will be using services.
+In the RQT window, click "Plugins" then "Services" then "Service Caller".
+Click "Refresh Services" (the rotating arrows on the left).
+Then you can manipulate the turtlesim: Spawn new turtles, set_pen for a turtle to change the line it draws, etc.
+Play around with it.
+
+The command to change which turtle you control is difficult, visit the website to find it.
+
 Website:
+https://docs.ros.org/en/lyrical/Get-Started/Introducing-Turtlesim/Introducing-Turtlesim.html
