@@ -1,0 +1,13 @@
+Commands used:
+
+    ros2 run turtlesim turtlesim_node
+
+    (in a new terminal)
+    ros2 run turtlesim turtle_teleop_key
+
+    rqt (for GUI; not strictly necessary)
+
+Explanation:
+Just a quick test to demonstrate ROS Concepts such as topics, nodes, and pipes (communcating betwee nodes)
+
+Website:
