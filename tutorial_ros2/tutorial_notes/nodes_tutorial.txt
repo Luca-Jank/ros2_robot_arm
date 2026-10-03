@@ -1,8 +1,11 @@
 Nodes are modular elements of ROS2 that use services, topics, and other means to commmunicate with each other.
 
-
 // This command lists ALL nodes on the system.
 ros2 node list 
 
 // Be aware: node_name will always start with "/", e.g. "/my_node"
 ros2 node info <node_name>
+
+// You can launch multiple nodes with configuration file scripts written in python yaml or xml
+ros2 launch turtlesim multisim.launch.py
+// Note: this command uses a file called multisim.launch.py, which the people at ros2 provided with the ro2 install.
