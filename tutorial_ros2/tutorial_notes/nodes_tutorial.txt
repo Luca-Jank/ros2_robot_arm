@@ -1,0 +1,8 @@
+Nodes are modular elements of ROS2 that use services, topics, and other means to commmunicate with each other.
+
+
+// This command lists ALL nodes on the system.
+ros2 node list 
+
+// Be aware: node_name will always start with "/", e.g. "/my_node"
+ros2 node info <node_name>
