@@ -1,0 +1,64 @@
+In ROS2, topics are a means of communcation (bus) between parts of a system.
+
+One node can write certain data to any number of topics (publishing), and one node may also receive certain data from any number of topics (subscribing)
+
+CLI Commands for topics:
+
+ros2 topic list
+=> Lists all topics currently in the system
+Example:
+ 
+/turtle1/cmd_vel // After you started turtlesim
+
+ros2 topic list -t
+=> Lists all topics with their topic types appended
+Example:
+
+/turtle1/cmd_vel [geometry_msgs/msg/Twist] // After you started turtlesim
+
+ros2 topic echo <topic_name>
+=> Lists the data being writen to a topic by one or multiple nodes.
+Example: // Do this after starting turtlesim
+
+ros2 topic echo /trutle1/cmd_vel
+[prints out a bunch of data about the angular and linear velocity] 
+
+ros2 topic info <topic_name> [-t]
+=> Prints out information about the topic such as publisher count, subscriber count, and topic type
+Example:
+
+ros2 topic info /turtle1/cmd_vel -t
+[prints out info about subscriber count] 
+
+ros2 interface show <msg_type>
+=> Prints out info on the msg type
+Example:
+
+ros2 interface show geometry_msgs/msg/Twist
+[info about the "Twist" msg from geometry_msgs] 
+
+ros2 topic pub <topic_name> <msg_type> '<args>' [--rate X] [--once]
+=> Publishes to a topic (wrties Data to a topic) using the CLI. Useful for debugging / testing, I guess.
+=> The <args> must be in YAML format, see blow for one example matching the msg_type geometry_msgs/msg/Twist.
+Example:
+ros2 topic pub /turtle1/cmd_vel geometry_msgs/msg/Twist "{linear: {x: 2.0, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: 1.8}}"
+
+You can also use previous command with only the values that you want to change.
+Example: // This will do the same thing as the one above. Exactly the same thing, just shorter to write.
+
+ros2 topic pub /turtle1/cmd_vel geometry_msgs/msg/Twist "{linear: {x: 2.0}, angular: {z: 1.8}}" 
+
+ros2 topic hz <topic_name>
+=> Displays the rate at which data is being written to this topic / the rate at which data is being published to this topic.
+
+ros2 topic bw <topic_name>
+=> Displays the brandwidth used by a topic
+
+ros2 topic find <topic_type>
+=> Finds all active topics of a <topic_type> on the system.
+
+Summary:
+Nodes write their data to topics which can then be received by other nodes that need / want this data.
+The writing is called publishing, the receiving is called subscrpition.
+
+
