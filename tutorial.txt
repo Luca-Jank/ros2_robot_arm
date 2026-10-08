@@ -1,0 +1,26 @@
+# Installation notes
+
+ROS2 needs a locale using UTF-8.
+
+ROS2 needs to setup an environment from a setup.bash file. This needs to be sourced every single time you plan on using ros2.
+The best way to do it is to append 
+	"source /opt/ros/lyrical/setup.bash"
+into your ~/.bashrc.
+If you don't do this, you will get errors upon trying to launch ros related commands like
+	ros2 run [...]
+It will tell you that this command cannot be found.
+
+To check whether you sourced the ROS setup files correctly, you can run 
+	"$ printenv | grep -i ROS"
+ and check if ROS_VERSION, ROS_PYTHON VERSION, and ROS_DISTRO appear.
+
+# Domains and Nodes
+ROS2 uses nodes to send commands. If you want to make sure your nodes only communicate with your own nodes in a physical network where other people may 
+have other nodes, you can set a DOMAIN_ID by appending
+	export ROS_DOMAIN_ID=<your_domain_id>
+to your ~/.bashrc file. Replace <your_domain_id> with any number between 0 and 101.
+
+Nodes in ROS try to discover other nodes in the local network by default. To adjust the range, you can set the ROS_AUTOMATIC_DISCOVERY_RANGE.
+Since I'm using it on my own PC, I will set it to only search my local machine with the command:
+	echo "export ROS_AUTOMATIC_DISCOVERY_RANGE=LOCALHOST" >> ~/.bashrc
+This command appends the necessary variable assignment to bashrc. You can also use it in a similiar manner for the commands above.

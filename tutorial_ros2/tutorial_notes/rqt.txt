@@ -1,0 +1,6 @@
+RQT Logger is a very useful tool for debugging and getting more information
+
+ros2 run rqt_console rqt_console
+
+RQT Graph is a graphical introspection tool which can help visualize the communcation of nodes in a system 
+via their topics, publishing, and subscriptions.
