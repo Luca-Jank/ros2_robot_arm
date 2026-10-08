@@ -1,0 +1,28 @@
+# Services
+Services are another method (compared to topics) for communication between nodes in a ROS2 system. Services utilize a "call and response" model, unlike topics, which are "publish and subscribe" based.
+ 
+There are "Service Servers" and "Service Clients". The Clients request data from a Service Server, which responds with the data. The Service Server only provides data when specifically requested by a client, unlike topics, which continually publish.
+Service Servers and Service Clients have a 1:n relationship: There can be many Clients, but only one Server.
+
+Commands:
+
+// Lists service type 
+ros2 service type <service_name>
+Example: 
+ros2 service type /clear
+
+// Lists service of type <type_name>
+ros2 service list -t
+Example:
+ros2 service find std_srvs/srv/Empty
+
+// Shows the data that <type_name> utilizes
+ros2 interface show <type_name>
+Examples:
+ros2 interface show std_srvs/srv/Empty
+ros2 interface show turtlesim_msgs/srv/Spawn
+
+// Calls a service from CLI
+ros2 service call <service_name> <service_type> <arguments>
+Examples:
+ros2 service call /clear std_srvs/srv/Empty
