@@ -1,0 +1,34 @@
+Parameters are values of nodes that can be used to change behaviour, visuals, or similiar things.
+Nodes have multiple parameters and each parameter has data associated with it.
+
+// As always, run ros2 run turtlesim turtlesim_node
+// and turtle_teleop_key (in another terminal)
+
+// List all parameters of all nodes on the system
+ros2 param list 
+
+// Get the value of a node's parameter
+ros2 param get <node_name> <parameter_name>
+Example:
+ros2 param get /turtlesim background_g
+
+// Set the value of a node's parameter
+ros2 param set <node_name> <parameter_name> <value>
+Example:
+ros2 param set /turtlesim background_g 150
+
+// View all of a node's current parameters
+ros2 param dump <node_name>
+Examples:
+ros2 param dump /turtlesim
+ros2 param dump /turtlesim > turtlesim.yaml // This is for saving the params in a file for later reuse
+
+// Load parameters from a file
+ros2 param load <node_name> <param_file_name>
+Example:
+ros2 param load /turtlesim turtlesim.yaml
+
+// Load parameter file on startup
+ros2 run <package_name> <executable_name> --ros-args --params-file <file_name>
+Examples:
+ros2 run turtlesim turtlesim_node --ros-args --params-file turtlesim.yaml
