@@ -1,6 +1,7 @@
 In ROS2, topics are a means of communcation (bus) between parts of a system.
 
-One node can write certain data to any number of topics (publishing), and one node may also receive certain data from any number of topics (subscribing)
+One node can write certain data to any number of topics (publishing), and one node may also receive certain data
+from any number of topics (subscribing)
 
 CLI Commands for topics:
 

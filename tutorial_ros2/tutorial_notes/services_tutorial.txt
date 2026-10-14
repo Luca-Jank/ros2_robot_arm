@@ -1,7 +1,10 @@
 # Services
-Services are another method (compared to topics) for communication between nodes in a ROS2 system. Services utilize a "call and response" model, unlike topics, which are "publish and subscribe" based.
+Services are another method (compared to topics) for communication between nodes in a ROS2 system.
+ Services utilize a "call and response" model, unlike topics, which are "publish and subscribe" based.
  
-There are "Service Servers" and "Service Clients". The Clients request data from a Service Server, which responds with the data. The Service Server only provides data when specifically requested by a client, unlike topics, which continually publish.
+There are "Service Servers" and "Service Clients". The Clients request data from a Service Server,
+which responds with the data. The Service Server only provides data when specifically requested by a client,
+unlike topics, which continually publish.
 Service Servers and Service Clients have a 1:n relationship: There can be many Clients, but only one Server.
 
 Commands:

@@ -1,0 +1,31 @@
+Actions are a means of communicating data between nodes in a ROS System.
+Unlike topics, which are designed to contionously update data, or services, which are mostly designed as one-off data transmissions,
+actions are used for long running tasks. They are built with services and topics, and they are similiar to services, except they
+also provided regular "feedback" data updates and can be cancelled.
+
+// List of actions of a node
+ros2 node info <node_name>
+Example:
+ros2 node info /turtlesim
+
+// List of all actions on a system
+ros2 action list [-t] // -t to also display the type
+
+// Check action type for one action (above command with "-t" lists this for all actions)
+ros2 action type <action_name>
+Example:
+ros2 action type /turtle1/rotate_absolute
+
+// Further information about the action
+ros2 action info <action_name>
+Example:
+ros2 action info /turtle1/rotate_absolute
+
+// Show structure of an action TYPE (NOT the action itself)
+ros2 interface show <action_type>
+ros2 interface show turtlesim_msgs/action/RotateAbsolute
+
+// Send an action from the command linear
+ros2 action send_goal <action_name> <action_type> <values>
+Example:
+ros2 action send_goal /turtle1/rotate_absolute turtlesim_msgs/action/RotateAbsolute "{theta: 1.57}"
