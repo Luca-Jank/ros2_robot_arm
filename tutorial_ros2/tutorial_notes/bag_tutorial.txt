@@ -1,0 +1,7 @@
+Bag is a way to check and replay data that was sent within the system.
+
+Commands:
+
+// Records all data being published to a topic
+ros2 bag record <topic name>
+// Example: ros2 bag record /turtle1/cmd/vel
