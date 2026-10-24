@@ -1,0 +1,7 @@
+Ros2 Bag can be used to record and later on play back data that topics in your system received.
+It only works for data published to topics, and you need to record the data first to replay it.
+
+// Record the data being published to a topic
+ros2 bag record <topic_name>
+// Example:
+ros2 bag record /turtle1/cmd_vel
